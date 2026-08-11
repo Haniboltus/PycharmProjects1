@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Bolo</title>
+</head>
+<body>
+    <h1>Adicionar Novo Bolo</h1>
+
+    <form method="POST" >
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <button type="submit">Salvar</button>
+        <a href="{% url 'catalogo:home' %}">Cancelar</a>
+    </form>
+</body>
+</html>

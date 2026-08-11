@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Bolos</title>
+</head>
+<body>
+    <h1>Nossos deliciosos Bolos</h1>
+    <a href="{% url 'catalogo:home' %}">Voltar</a>
+
+    {% if bolos%}
+        <ul>
+            {% for bolo in bolos %}
+                <li>{{bolo.nome}} - R$ {{bolo.preco}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum bolo cadastrado.</p>
+    {% endif %}
+</body>
+</html>
